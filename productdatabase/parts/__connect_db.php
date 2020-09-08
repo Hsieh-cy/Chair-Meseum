@@ -1,9 +1,9 @@
 <?php
 
 $db_host = "localhost";
-$db_name = "my_test";
-$db_user = "annie";
-$db_pass = "423578";
+$db_name = "chairproject";
+$db_user = "root";
+$db_pass = "";
 $dsn = "mysql:host={$db_host};dbname={$db_name}";
 $pdo_options = [
     PDO::ATTR_ERRMODE =>
