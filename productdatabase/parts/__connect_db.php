@@ -13,6 +13,8 @@ $pdo_options = [
     PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"
 ];
 
+
+
 // PDO class : Represents a connection between PHP and a database server.
 
 $pdo = new PDO($dsn, $db_user, $db_pass, $pdo_options);
