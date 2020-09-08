@@ -57,13 +57,15 @@ if (!isset($page_name)) $page_name = '';
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
+
+
+            <li class="nav-item dropdown <?= $page_name == 'data-list' || 'data-insert' ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     二手管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">新增二手</a>
-                    <a class="dropdown-item" href="#">管理管理</a>
+                    <a class="dropdown-item" href="../secondhand/data-list.php">二手商品表單</a>
+                    <a class="dropdown-item" href="../secondhand/data-insert.php">新增二手商品</a>
                 </div>
             </li>
 
