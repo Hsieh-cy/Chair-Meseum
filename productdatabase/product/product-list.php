@@ -36,14 +36,12 @@ if ($totalRows > 0) {
 
 <style>
     .row {
-
         margin: auto;
     }
 
     body {
         background-color: #EFF0F0;
     }
-
     h3 {
         margin: auto;
         margin-top: 40px;
@@ -52,9 +50,7 @@ if ($totalRows > 0) {
 
     table.table tr th {
         background-color: #5F6B6B !Important;
-
         color: white !Important;
-
     }
 
     .my-trash-i {
@@ -104,12 +100,6 @@ if ($totalRows > 0) {
         background-color: #C77334 !Important;
         border: solid 1px #5A4181;
     }
-
-    /* .choose {
-        margin: 10px 0px 10px 0px !Important;
-        border-radius: 0px;
-
-    } */
 
     .wrap {
         background-position: center;
