@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../parts/__connect.php';
+require __DIR__ . '/../parts/__connect_db.php';
 require __DIR__ . '/../parts/__admin-required.php';
 
 // isset(variable to be checked.) — Determine if a variable is declared and is different than NULL. type : bool.
@@ -14,10 +14,10 @@ require __DIR__ . '/../parts/__admin-required.php';
 
 $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'data-list.php';
 
-if(empty($_GET['sid'])){
-    
+if (empty($_GET['sid'])) {
+
     // 字串的串連使用的是串連運算子，也就是半形點（.）
-    header('Location: '. $referer);
+    header('Location: ' . $referer);
     exit;
 }
 
@@ -25,4 +25,4 @@ if(empty($_GET['sid'])){
 // 這是什麼意思？
 $sid = intval($_GET['sid']) ?? 0;
 $pdo->query("DELETE FROM `w_product_mainList` WHERE sid=$sid");
-header('Location:'. $referer);
+header('Location:' . $referer);

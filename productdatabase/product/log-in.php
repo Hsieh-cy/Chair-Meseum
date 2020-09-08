@@ -1,10 +1,10 @@
 <?php
 $page_title = '登入';
 $page_name = 'login';
-require __DIR__ . '/../parts/__connect.php';
+require __DIR__ . '/../parts/__connect_db.php';
 ?>
 
-<?php include __DIR__ . '/../parts/__header.php'; ?>
+<?php include __DIR__ . '/../parts/__html_head.php'; ?>
 
 <style>
     body {
@@ -13,7 +13,7 @@ require __DIR__ . '/../parts/__connect.php';
 
     .form1 {
         justify-content: center;
-      
+
     }
 
 
@@ -32,7 +32,7 @@ require __DIR__ . '/../parts/__connect.php';
 
 
     img {
-        width:400px;
+        width: 400px;
         margin-top: 50px;
     }
 
@@ -44,7 +44,7 @@ require __DIR__ . '/../parts/__connect.php';
     }
 </style>
 
-<?php include __DIR__ . '/../parts/__nav.php'; ?>
+<?php include __DIR__ . '/../parts/__navbar.php'; ?>
 
 <div class="container">
     <div class="row">
@@ -72,7 +72,7 @@ require __DIR__ . '/../parts/__connect.php';
     </div>
 </div>
 
-<?php include __DIR__ . '/../parts/__script.php'; ?>
+<?php include __DIR__ . '/../parts/__scripts.php'; ?>
 
 <script>
     function checkForm() {
@@ -94,4 +94,4 @@ require __DIR__ . '/../parts/__connect.php';
     }
 </script>
 
-<?php include __DIR__ . '/../parts/__footer.php'; ?>
+<?php include __DIR__ . '/../parts/__html_foot.php'; ?>

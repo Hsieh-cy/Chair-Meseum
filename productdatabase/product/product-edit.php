@@ -1,4 +1,4 @@
-<?php require __DIR__ . '/../parts/__connect.php' ?>
+<?php require __DIR__ . '/../parts/__connect_db.php' ?>
 <?php require __DIR__ . '/../parts/__admin-required.php'; ?>
 
 <?php
@@ -27,7 +27,7 @@ $chair_brands = $pdo->query('SELECT * FROM `w_chair_designer`')->fetchAll();
 $chair_colors = $pdo->query('SELECT * FROM `w_chair_color`')->fetchAll();
 ?>
 
-<?php require __DIR__ . '/../parts/__header.php' ?>
+<?php require __DIR__ . '/../parts/__html_head.php' ?>
 
 <style>
     body {
@@ -87,7 +87,7 @@ $chair_colors = $pdo->query('SELECT * FROM `w_chair_color`')->fetchAll();
     }
 </style>
 
-<?php require __DIR__ . '/../parts/__nav.php' ?>
+<?php require __DIR__ . '/../parts/__navbar.php' ?>
 
 
 <div class="container">
@@ -267,7 +267,7 @@ $chair_colors = $pdo->query('SELECT * FROM `w_chair_color`')->fetchAll();
 </div>
 
 
-<?php require __DIR__ . '/../parts/__script.php' ?>
+<?php require __DIR__ . '/../parts/__scripts.php' ?>
 
 <script>
     const $inforbar = document.querySelector('#infobar');
@@ -320,4 +320,4 @@ $chair_colors = $pdo->query('SELECT * FROM `w_chair_color`')->fetchAll();
 </script>
 
 
-<?php require __DIR__ . '/../parts/__footer.php' ?>
+<?php require __DIR__ . '/../parts/__html_foot.php' ?>

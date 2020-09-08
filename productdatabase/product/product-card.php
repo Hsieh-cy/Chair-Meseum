@@ -2,7 +2,7 @@
 $page_title = '產品列表';
 $page_name = 'data-list';
 
-require __DIR__ . '/../parts/__connect.php';
+require __DIR__ . '/../parts/__connect_db.php';
 
 $perPage = 21;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -31,7 +31,7 @@ if ($totalRows > 0) {
 //$rows = $stmp->fetchAll();
 ?>
 
-<?php require __DIR__ . '/../parts/__header.php' ?>
+<?php require __DIR__ . '/../parts/__html_head.php' ?>
 
 <style>
     .row {
@@ -110,7 +110,7 @@ if ($totalRows > 0) {
     }
 </style>
 
-<?php require __DIR__ . '/../parts/__nav.php' ?>
+<?php require __DIR__ . '/../parts/__navbar.php' ?>
 
 <div class="container">
     <div class="row">
@@ -217,7 +217,7 @@ if ($totalRows > 0) {
 
 </div>
 
-<?php require __DIR__ . '/../parts/__script.php' ?>
+<?php require __DIR__ . '/../parts/__scripts.php' ?>
 <script>
     function delete_it(sid) {
         if (confirm(`是否要刪除 ${sid}的產品資料??`)) {
@@ -225,4 +225,4 @@ if ($totalRows > 0) {
         }
     }
 </script>
-<?php require __DIR__ . '/../parts/__footer.php' ?>
+<?php require __DIR__ . '/../parts/__html_foot.php' ?>

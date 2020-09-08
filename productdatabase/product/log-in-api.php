@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../parts/__connect.php';
+require __DIR__ . '/../parts/__connect_db.php';
 
 header('Content-Type: application/json');
 

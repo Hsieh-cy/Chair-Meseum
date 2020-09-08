@@ -24,26 +24,26 @@ if (!isset($page_name)) $page_name = '';
                 </div>
             </li>
 
-            <li class="nav-item dropdown <?= $page_name == 'data-list' || 'data-insert' ? 'active' : '' ?>">
+            <li class="nav-item dropdown <?= $page_name == 'data_list' || 'data-insert'  ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     產品管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/productdatabase/product/product-insert.php">新增產品</a>
+                    <a class="dropdown-item" href="../product/product-insert.php">新增產品</a>
                     <a class="dropdown-item" href="../product/product-list.php">產品列表</a>
 
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown <?= $page_name == 'data_list' || 'data_experienceinsert' || 'wood_experienceinsert' || 'wood_list' ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     體驗管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">體驗活動列表</a>
-                    <a class="dropdown-item" href="#">新增體驗資料</a>
-                    <a class="dropdown-item" href="#">木工創客地點表</a>
-                    <a class="dropdown-item" href="#">新增木工創客地點資料</a>
+                    <a class="dropdown-item" href="../test/data_list.php">體驗活動列表</a>
+                    <a class="dropdown-item" href="../test/data_experienceinsert.php">新增體驗資料</a>
+                    <a class="dropdown-item" href="../test/wood_list.php">木工創客地點表</a>
+                    <a class="dropdown-item" href="../test/wood_experienceinsert.php">新增木工創客地點資料</a>
                 </div>
             </li>
 

@@ -1,6 +1,6 @@
 <?php 
 
-require __DIR__. '/../parts/__connect.php';
+require __DIR__. '/../parts/__connect_db.php';
 require __DIR__ . '/../parts/__admin-required.php';
 header('Content-Type: application/json');
 
@@ -40,4 +40,3 @@ if ($stmt->rowCount()) {
 
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
-?>

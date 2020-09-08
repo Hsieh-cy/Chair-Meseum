@@ -2,7 +2,7 @@
 $page_title = '產品列表';
 $page_name = 'data-list';
 
-require __DIR__ . '/../parts/__connect.php';
+require __DIR__ . '/../parts/__connect_db.php';
 
 $perPage = 20;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -32,7 +32,7 @@ if ($totalRows > 0) {
 ?>
 
 
-<?php require __DIR__ . '/../parts/__header.php' ?>
+<?php require __DIR__ . '/../parts/__html_head.php' ?>
 
 <style>
     .row {
@@ -125,7 +125,7 @@ if ($totalRows > 0) {
     }
 </style>
 
-<?php require __DIR__ . '/../parts/__nav.php' ?>
+<?php require __DIR__ . '/../parts/__navbar.php' ?>
 
 <!-- `sid`, `產品編號`, `產品名稱`, `產品描述`, `顏色`, `產品類別`, `材質`, `產品圖`, `產品價格`, `Hashtag`, `上架日期` -->
 
@@ -136,8 +136,8 @@ if ($totalRows > 0) {
     </div>
     <div class="row justify-content-between">
         <div class="col">
-            <a href="/productdatabase/product/product-list.php" class="btn btn-warning choose">列表</a>
-            <a href="/productdatabase/product/product-card.php " class="btn btn-warning choose">網格</a>
+            <a href="product-list.php" class="btn btn-warning choose">列表</a>
+            <a href="product-card.php " class="btn btn-warning choose">網格</a>
         </div>
 
         <div class="col ">
@@ -274,7 +274,7 @@ if ($totalRows > 0) {
 </div>
 
 
-<?php require __DIR__ . '/../parts/__script.php' ?>
+<?php require __DIR__ . '/../parts/__scripts.php' ?>
 
 <script>
     function delete_it(sid) {
@@ -311,4 +311,4 @@ if ($totalRows > 0) {
     });
 </script> -->
 
-<?php require __DIR__ . '/../parts/__footer.php' ?>
+<?php require __DIR__ . '/../parts/__html_foot.php' ?>
