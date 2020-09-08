@@ -15,6 +15,8 @@ $pdo_options = [
 
 
 
+
+
 // PDO class : Represents a connection between PHP and a database server.
 
 $pdo = new PDO($dsn, $db_user, $db_pass, $pdo_options);
