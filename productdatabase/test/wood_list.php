@@ -97,13 +97,38 @@ if ($totalRows > 0) {
         margin-top: 10px;
 
     }
+
+    .pagination>li>a {
+        background-color: white;
+        color: darkgray;
+    }
+
+    .pagination>li>a:focus,
+    .pagination>li>a:hover,
+    .pagination>li>span:focus,
+    .pagination>li>span:hover {
+        color: #5a5a5a;
+        background-color: #eee;
+        border-color: #ddd;
+    }
+
+    .pagination>.active>a {
+        color: white;
+        background-color: #C77334 !Important;
+        border: solid 1px #ddd !Important;
+    }
+
+    .pagination>.active>a:hover {
+        background-color: #C77334 !Important;
+        border: solid 1px #5A4181;
+    }
 </style>
 
 <?php include __DIR__ . '/../parts/__navbar.php'; ?>
 <div class="container">
 
     <div class="row">
-        <h3>體驗資料列表</h3>
+        <h3>木工創客地點表</h3>
     </div>
 
     <div class="row justify-content-between">

@@ -29,13 +29,14 @@ if (!isset($page_name)) $page_name = '';
                     產品管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../product/product-insert.php">新增產品</a>
                     <a class="dropdown-item" href="../product/product-list.php">產品列表</a>
+                    <a class="dropdown-item" href="../product/product-insert.php">新增產品</a>
+
 
                 </div>
             </li>
 
-            <li class="nav-item dropdown <?= $page_name == 'data_list' || 'data_experienceinsert' || 'wood_experienceinsert' || 'wood_list' ? 'active' : '' ?>">
+            <li class="nav-item dropdown <?= $page_name == 'data_list' || 'data_experienceinsert' || 'wood_experienceinsert' || 'wood_list' || 'title_data_list' || 'title_data_list_insert' ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     體驗管理
                 </a>
@@ -44,18 +45,29 @@ if (!isset($page_name)) $page_name = '';
                     <a class="dropdown-item" href="../test/data_experienceinsert.php">新增體驗資料</a>
                     <a class="dropdown-item" href="../test/wood_list.php">木工創客地點表</a>
                     <a class="dropdown-item" href="../test/wood_experienceinsert.php">新增木工創客地點資料</a>
+                    <a class="dropdown-item" href="../test/title_data_list.php">文章列表</a>
+                    <a class="dropdown-item" href="../test/title_data_list_insert.php">新增文章列表</a>
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown <?= $page_name == 'datalist2_delete' || 'data-insert'  ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     募資管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">新增募資</a>
-                    <a class="dropdown-item" href="#">募資管理</a>
+                    <a class="dropdown-item" href="../eva/datalist2_delete.php">募資商品列表</a>
+                    <a class="dropdown-item" href="../eva/data-insert.php">新增募資商品</a>
+                    <a class="dropdown-item" href="../eva/data-frecord.php">贊助紀錄</a>
                 </div>
             </li>
+
+           
+
+
+
+
+
+
 
 
 
@@ -69,13 +81,13 @@ if (!isset($page_name)) $page_name = '';
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown <?= $page_name == 'biddingList' || 'biddingAdd' ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     競標管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">新增競標</a>
-                    <a class="dropdown-item" href="#">競標管理</a>
+                    <a class="dropdown-item" href="../code/biddingList.php">競標商品表單</a>
+                    <a class="dropdown-item" href="../code/biddingAdd.php">新增競標商品</a>
                 </div>
             </li>
 
@@ -92,35 +104,36 @@ if (!isset($page_name)) $page_name = '';
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown <?= $page_name == 'blog_data_list' || 'blog_insert' ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     文章管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">新增文章</a>
-                    <a class="dropdown-item" href="#">文章管理</a>
+                    <a class="dropdown-item" href="../blog/blog_data_list.php">文章列表</a>
+                    <a class="dropdown-item" href="../blog/blog_insert.php">新增文章</a>
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
+
+            <li class="nav-item dropdown <?= $page_name == 'order-list' || 'ata_list_detail' ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     購物車
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">訂單</a>
-                    <a class="dropdown-item" href="#">訂單明細</a>
+                    <a class="dropdown-item" href="../j_order-master/data_list.php">訂單</a>
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown <?= $page_name == 'members_data_list' || 'insert' ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     會員中心
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">會員管理</a>
-                    <a class="dropdown-item" href="#">會員註冊</a>
+                    <a class="dropdown-item" href="../members/members_data_list.php">會員名單</a>
+                    <a class="dropdown-item" href="../members/insert.php">新增會員</a>
                 </div>
             </li>
+
 
 
 
