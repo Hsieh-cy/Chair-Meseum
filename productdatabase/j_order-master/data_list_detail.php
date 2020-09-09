@@ -3,7 +3,7 @@
 $page_title = "明細列表";
 $page_name = "data_list_detail";
 
-require __DIR__ . "/../parts/__connect_db.php";
+require __DIR__ . "/parts/__connect_db.php";
 $perPage = 10; //每頁有幾筆資料
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -43,8 +43,8 @@ $cate_qualify = $pdo->query($q_sql)->fetchAll();
 
 ?>
 
-<?php include __DIR__ . '/../parts/__html_head.php'; ?>
-<?php include __DIR__ . '/../parts/__navbar.php'; ?>
+<?php include __DIR__ . '/parts/__html_head.php'; ?>
+<?php include __DIR__ . '/parts/__navbar.php'; ?>
 
 <div class="container">
 
@@ -58,6 +58,7 @@ $cate_qualify = $pdo->query($q_sql)->fetchAll();
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">PO_NO</th>
+                <th scope="col">Picture</th>
                 <th scope="col">product_name</th>
                 <th scope="col">quantity</th>
                 <th scope="col">qualify</th>
@@ -79,17 +80,29 @@ $cate_qualify = $pdo->query($q_sql)->fetchAll();
                         $product_status = $cate_destil_status[$i - 1]['product_status'];
                     }
                 };
-                for ($i = 1; $i <= 109; $i++) {
+                $i = 1;
+                while (true) {
                     if ($r['product_name'] == $i) {
                         $product_name = $cate_product_name[$i - 1]['product_name'];
+                        break;
                     };
+                    $i++;
+                };
+                $j = 1;
+                while (true) {
+                    if ($r['product_name'] == $i) {
+                        $pic_name = $cate_product_name[$i - 1]['photo'];
+                        break;
+                    };
+                    $j++;
                 };
 
                 ?>
                 <tr>
                     <td><?= $r['sid'] ?></td>
                     <td><?= $r['PO_NO'] ?></td>
-                    <td><?= $product_name ?></td>
+                    <td><img src="./img/<?= $pic_name ?>"></td>
+                    <td><?= $product_name . " " . $r['product_name'] ?></td>
                     <td><?= $r['quantity'] ?></td>
                     <td><?= $qualify ?></td>
                     <td><?= $product_status ?></td>
@@ -117,5 +130,5 @@ $cate_qualify = $pdo->query($q_sql)->fetchAll();
 
 </div>
 
-<?php include __DIR__ . '/../parts/__scripts.php'; ?>
-<?php include __DIR__ . '/../parts/__html_foot.php'; ?>
+<?php include __DIR__ . '/parts/__scripts.php'; ?>
+<?php include __DIR__ . '/parts/__html_foot.php'; ?>
