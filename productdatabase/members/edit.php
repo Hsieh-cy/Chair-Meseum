@@ -101,9 +101,10 @@ if (empty($row)) {
     const mobile_pattern = /^09\d{2}-?\d{3}-?\d{3}$/;
     const $name = document.querySelector('#name');
     const $email = document.querySelector('#email');
+    const $password = document.querySelector('#password');
     const $mobile = document.querySelector('#mobile');
     const $avatar = document.querySelector('#avatar');
-    const r_fields = [$name, $email, $mobile, $avatar];
+    const r_fields = [$name, $email, $password, $mobile, $avatar];
     const infobar = document.querySelector('#infobar');
     const submitBtn = document.querySelector('button[type=submit]');
 
@@ -126,6 +127,14 @@ if (empty($row)) {
             isPass = false;
             $email.style.borderColor = 'red';
             $email.nextElementSibling.innerHTML = '請填寫正確格式的電子郵箱';
+        }
+
+        if (!$password.value) {
+            isPass = false;
+            $password.style.borderColor = 'red';
+            $password.nextElementSibling.innerHTML = '請輸入密碼';
+
+            // submitBtn.style.display = 'inline-block';
         }
 
         if (!mobile_pattern.test($mobile.value)) {

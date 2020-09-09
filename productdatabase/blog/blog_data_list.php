@@ -92,6 +92,14 @@ $type = array(
                 </div>
             </div>
         <?php endforeach; ?>
+
+        <?php
+        // css 版面問題，自己填充以利排版
+        if (count($rows) % 3 == 2) {
+            echo '<div class="filling_card mb-5" style="width: 18rem;"></div>';
+        }
+        ?>
+
     </div>
 
 
