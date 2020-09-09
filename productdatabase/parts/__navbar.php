@@ -29,8 +29,9 @@ if (!isset($page_name)) $page_name = '';
                     產品管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../product/product-insert.php">新增產品</a>
                     <a class="dropdown-item" href="../product/product-list.php">產品列表</a>
+                    <a class="dropdown-item" href="../product/product-insert.php">新增產品</a>
+
 
                 </div>
             </li>
@@ -60,16 +61,7 @@ if (!isset($page_name)) $page_name = '';
                 </div>
             </li>
 
-            <li class="nav-item dropdown <?= $page_name == 'data_list' || 'data-insert'  ? 'active' : '' ?>">
-                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    產品管理
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../product/product-insert.php">新增產品</a>
-                    <a class="dropdown-item" href="../product/product-list.php">產品列表</a>
-
-                </div>
-            </li>
+           
 
 
 
