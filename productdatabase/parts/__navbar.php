@@ -131,6 +131,7 @@ if (!isset($page_name)) $page_name = '';
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="../members/members_data_list.php">會員名單</a>
                     <a class="dropdown-item" href="../members/insert.php">新增會員</a>
+                    <a class="dropdown-item" href="../members/fake_data.php">新增會員假資料</a>
                 </div>
             </li>
 
