@@ -3,7 +3,7 @@
 $page_title = "明細列表";
 $page_name = "data_list_detail";
 
-require __DIR__ . "/parts/__connect_db.php";
+require __DIR__ . '/../parts/__connect_db.php';
 $perPage = 10; //每頁有幾筆資料
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -43,8 +43,13 @@ $cate_qualify = $pdo->query($q_sql)->fetchAll();
 
 ?>
 
-<?php include __DIR__ . '/parts/__html_head.php'; ?>
-<?php include __DIR__ . '/parts/__navbar.php'; ?>
+<?php include __DIR__ . '/../parts/__html_head.php'; ?>
+<style>
+    .dd {
+        cursor: pointer;
+    }
+</style>
+<?php include __DIR__ . '/../parts/__navbar.php'; ?>
 
 <div class="container">
 
@@ -101,7 +106,7 @@ $cate_qualify = $pdo->query($q_sql)->fetchAll();
                 <tr>
                     <td><?= $r['sid'] ?></td>
                     <td><?= $r['PO_NO'] ?></td>
-                    <td><img src="./img/<?= $pic_name ?>"></td>
+                    <td><img style="width:200px;heigh:100px" src="../uploads/<?= $pic_name ?>"></td>
                     <td><?= $product_name . " " . $r['product_name'] ?></td>
                     <td><?= $r['quantity'] ?></td>
                     <td><?= $qualify ?></td>
@@ -122,13 +127,17 @@ $cate_qualify = $pdo->query($q_sql)->fetchAll();
                             <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
                         </li>
                     <?php endfor; ?>
+                    <li class="page-item">
+                        <a class="page-link dd" onClick="javascript:history.back(1)">上一頁</a>
+                    </li>
                     <!-- <li class="page-item"><a class="page-link" href="page=<?= $page + 1 ?>"><i class="fas fa-arrow-circle-right"></i></a></li> -->
                 </ul>
+
             </nav>
         </div>
     </div>
 
 </div>
 
-<?php include __DIR__ . '/parts/__scripts.php'; ?>
-<?php include __DIR__ . '/parts/__html_foot.php'; ?>
+<?php include __DIR__ . '/../parts/__scripts.php'; ?>
+<?php include __DIR__ . '/../parts/__html_foot.php'; ?>
