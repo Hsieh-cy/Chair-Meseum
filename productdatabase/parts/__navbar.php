@@ -91,12 +91,12 @@ if (!isset($page_name)) $page_name = '';
                 </div>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     留言管理
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">產品</a>
+                    <a class="dropdown-item" href="../review/product-card.php">產品</a>
                     <a class="dropdown-item" href="#">體驗</a>
                     <a class="dropdown-item" href="#">募資</a>
                     <a class="dropdown-item" href="#">二手</a>
