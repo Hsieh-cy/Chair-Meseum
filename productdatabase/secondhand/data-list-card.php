@@ -2,7 +2,7 @@
 $page_title = '二手商品表';
 $page_name = 'data-list';
 require __DIR__ . '/../parts/__connect_db.php';
-$perPage = 5;
+$perPage = 6;
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 //用戶決定看第幾頁
@@ -76,6 +76,12 @@ $categories = $pdo->query($g_sql)->fetchAll();
         color: #C77334;
     }
 
+    h3 {
+        margin: auto;
+
+        margin-bottom: 20px;
+    }
+
     .redstars {
         color: red;
     }
@@ -105,9 +111,22 @@ $categories = $pdo->query($g_sql)->fetchAll();
         border: solid 1px #5A4181;
     }
 
-    h3 {
-        margin: auto;
-        margin-top: 0px;
+    .wrap {
+        /* background-position: center; */
+        background-repeat: no-repeat;
+    }
+
+    .wrap img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        background-size: cover !Important;
+        background-position: center;
+    }
+
+    .right {
+        margin-right: 10px;
+
         margin-bottom: 20px;
     }
 
@@ -118,20 +137,16 @@ $categories = $pdo->query($g_sql)->fetchAll();
     .breadcrumb .breadcrumb-item.active {
         color: #C77334;
     }
-
-    .right {
-        margin: 0 3px 10px;
-
-    }
 </style>
 <?php include __DIR__ . '/../parts/__navbar.php'; ?>
-<div class="container-fluid">
-
+<div class="container">
     <ol class="breadcrumb ">
         <li class="breadcrumb-item "><a class="text-black-50" href="#">後台管理</a></li>
         <li class="breadcrumb-item "><a class="text-black-50" href="#">二手管理</a></li>
         <li class="breadcrumb-item active" aria-current="page">產品列表</li>
     </ol>
+
+    <!-- `sid`, `product_no`, `productname`, `photo`, `price`, `description`, `stock` -->
 
     <div class="row justify-content-center">
         <h3>產品列表</h3>
@@ -141,85 +156,72 @@ $categories = $pdo->query($g_sql)->fetchAll();
         <a href="data-list.php" class="btn btn-light choose"><i class="fas fa-list"></i></a>
         <a href="data-list-card.php " class="btn btn-light choose"><i class="fas fa-th"></i></a>
     </div>
+    <?php foreach ($rows as $key => $r) : ?>
+        <?php
+        for ($i = 1; $i <= 5; $i++) {
+            if ($r['conditions_sid'] == $i) {
+                $conditions_sid = $cates[$i - 1]['name'];
+            }
+            if ($r['categories_sid'] == $i) {
+                $categories_sid = $categories[$i - 1]['name'];
+            }
+            if ($r['framework_sid'] == $i) {
+                $framework_sid = $framework[$i - 1]['name'];
+            }
+        };
 
-    <table class="table table-hover">
-        <!-- `sid`, `product_no`, `productname`, `photo`, `price`, `description`, `stock` -->
-        <thead>
-            <tr>
-                <?php if (isset($_SESSION['admin'])) : ?>
-                    <th><a href="javascript:"><i class="fas fa-trash-alt"></i></a></th>
-                <?php endif; ?>
-                <th scope="col">#</th>
-                <th scope="col">商品編號</th>
-                <th scope="col">商品名稱</th>
-                <th scope="col">價錢</th>
-                <th scope="col">圖片</th>
-                <th scope="col">描述</th>
-                <th scope="col">庫存</th>
-                <th scope="col">商品狀況</th>
-                <th scope="col">分類</th>
-                <th scope="col">材質</th>
-                <th scope="col">骨架</th>
-                <?php if (isset($_SESSION['admin'])) : ?>
-                    <th scope="col"><i class="fas fa-edit"></i>
-                    <?php endif; ?>
-                    </th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($rows as $key => $r) : ?>
-                <?php
-                for ($i = 1; $i <= 5; $i++) {
-                    if ($r['conditions_sid'] == $i) {
-                        $conditions_sid = $cates[$i - 1]['name'];
-                    }
-                    if ($r['categories_sid'] == $i) {
-                        $categories_sid = $categories[$i - 1]['name'];
-                    }
-                    if ($r['framework_sid'] == $i) {
-                        $framework_sid = $framework[$i - 1]['name'];
-                    }
-                };
+        switch ($r['material_sid']) {
+            case 1:
+                $material_sid = $material[0]['name'];
+                break;
+            case 2:
+                $material_sid = $material[1]['name'];
+                break;
+            case 5:
+                $material_sid = $material[2]['name'];
+                break;
+            default:
+                $material_sid = "未知";
+        }
+        ?>
 
-                switch ($r['material_sid']) {
-                    case 1:
-                        $material_sid = $material[0]['name'];
-                        break;
-                    case 2:
-                        $material_sid = $material[1]['name'];
-                        break;
-                    case 5:
-                        $material_sid = $material[2]['name'];
-                        break;
-                    default:
-                        $material_sid = "未知";
-                }
-                ?>
-                <tr>
-                    <?php if (isset($_SESSION['admin'])) : ?>
-                        <td><a href="data-delete.php?sid=<?= $r['sid'] ?>" onclick="ifDel(event)" data-sid="<?= $r['sid'] ?>"><i class="fas fa-trash-alt"></i></a></td>
-                    <?php endif; ?>
-                    <td><?= $r['sid'] ?></td>
-                    <td><?= $r['product_no'] ?></td>
-                    <td><?= $r['productname'] ?></td>
-                    <td><?= $r['price'] ?></td>
-                    <td><img src="./../uploads/<?= $r['photo'] ?>" alt="" id="myimg" width="150px"></td>
-                    <td><?= $r['description'] ?></td>
-                    <td><?= $r['stock'] ?></td>
-                    <td><?= $conditions_sid ?></td>
-                    <td><?= $categories_sid ?></td>
-                    <td><?= $material_sid ?></td>
-                    <td><?= $framework_sid ?></td>
+    <?php endforeach; ?>
+    <div class="row justify-content-center">
+        <?php foreach ($rows as $r) : ?>
+            <div class="col-4">
+                <div class="card mx-2">
 
-                    <?php if (isset($_SESSION['admin'])) : ?>
-                        <td><a href="data-edit.php?sid=<?= $r['sid'] ?>"><i class="fas fa-edit"></i></a></td>
-                    <?php endif; ?>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+                    <div class="wrap">
+                        <img src="../uploads/<?= $r['photo'] ?>" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $r['product_no'] ?></h5>
+
+                        <p class="card-text">產品名稱： <?= $r['productname'] ?> </p>
+                        <p class="card-text">價錢： <?= $r['price'] ?> </p>
+                        <p class="card-text">商品描述： <?= $r['description'] ?> </p>
+                        <p class="card-text">庫存： <?= $r['stock'] ?> </p>
+                        <p class="card-text">商品狀況： <?= $conditions_sid ?> </p>
+                        <p class="card-text">分類： <?= $categories_sid ?> </p>
+                        <p class="card-text">材質： <?= $material_sid ?> </p>
+                        <p class="card-text">骨架： <?= $framework_sid ?> </p>
+
+
+                        <?php if (isset($_SESSION['admin'])) : ?>
+                            <a href="data-delete.php?sid=<?= $r['sid'] ?>" onclick="ifDel(event)" data-sid="<?= $r['sid'] ?>"><i class="fas fa-trash-alt "></i></a>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['admin'])) : ?>
+                            <td><a href="data-edit.php?sid=<?= $r['sid'] ?>"><i class="fas fa-edit"></i></a></td>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+
+
+        <?php endforeach; ?>
+    </div>
     <div class="row">
-        <div class="col d-flex justify-content-center">
+        <div class="col d-flex justify-content-center mt-5">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item <?= $page == 1  ? 'disabled' : '' ?>">
