@@ -69,14 +69,28 @@ $categories = $pdo->query($g_sql)->fetchAll();
         margin: auto
     }
 
-    h5 {
+    h3 {
         margin: 30px auto;
+    }
+
+    .breadcrumb {
+        background-color: #EFF0F0;
+    }
+
+    .breadcrumb .breadcrumb-item.active {
+        color: #C77334;
     }
 </style>
 </style>
 <?php include __DIR__ . '/../parts/__navbar.php'; ?>
 <div class="container">
-    <h5 class="d-flex justify-content-center">編輯二手商品</h5>
+    <ol class="breadcrumb ">
+        <li class="breadcrumb-item "><a class="text-black-50" href="#">後台管理</a></li>
+        <li class="breadcrumb-item "><a class="text-black-50" href="#">二手管理</a></li>
+        <li class="breadcrumb-item "><a class="text-black-50" href="data-list.php">二手商品列表</a></li>
+        <li class="breadcrumb-item active" aria-current="page">編輯二手商品</li>
+    </ol>
+    <h3 class="d-flex justify-content-center">編輯二手商品</h3>
 
 
     <div id="infobar" class="alert alert-success" role="alert" style="display: none">
