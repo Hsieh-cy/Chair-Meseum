@@ -1,5 +1,5 @@
 <?php require __DIR__ . '/../parts/__connect_db.php';
- ?>
+?>
 
 <?php
 
@@ -19,19 +19,52 @@ $row = $pdo->query($sql)->fetch();
 <?php require __DIR__ . '/../parts/__html_head.php' ?>
 
 <style>
+    body {
+        background-color: #EFF0F0;
+    }
+
+    h3 {
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        margin: auto;
+        margin-bottom: 100px;
+    }
+
+    .form-group {
+        margin: 20px;
+    }
+
     .form-group input {
-        width: 400px;
+        width: 500px;
+        border: none;
+        height: 45px;
+        margin-top: 10px;
+        height: 45px;
 
     }
 
     .form-group textarea {
-        width: 400px;
-
+        width: 500px;
+        border: none;
+        margin-top: 10px;
     }
 
     .form-group select {
-        width: 400px;
+        width: 500px;
+        border: none;
+        margin-top: 10px;
+        height: 45px;
+    }
 
+    .form-group button {
+        width: 500px;
+        height: 45px;
+        margin-bottom: 25px;
+        margin-top: 10px;
     }
 </style>
 
@@ -41,7 +74,7 @@ $row = $pdo->query($sql)->fetch();
 
 <div class="container">
     <div class="row">
-        <h3>編輯評論</h3>
+        <h3>填寫評論</h3>
     </div>
 
     <div class="row">
@@ -50,45 +83,47 @@ $row = $pdo->query($sql)->fetch();
         </div>
     </div>
     <div class="row">
+        <div class="col">
+            <form class="justify-content-center" name="form1" onsubmit="checkForm(); return false;" novalidate>
+                <input type="hidden" class="form-control" name="sid" value="<?= $row['sid'] ?>">
 
-        <form class="justify-content-center" name="form1" onsubmit="checkForm(); return false;" novalidate>
-            <input type="hidden" class="form-control" name="sid" value="<?= $row['sid'] ?>">
+                <div class="form-group">
+                    <label>購買產品
+                        <input type="text" class="form-control" name="buy_product" value="<?= htmlentities($row['buy_product']) ?>">
+                    </label>
+                </div>
 
-            <div class="form-group">
-                <label>購買產品
-                    <input type="text" class="form-control" name="buy_product" value="<?= htmlentities($row['buy_product']) ?>">
-                </label>
-            </div>
-
-            <div class="form-group">
-                <label>會員姓名
-                    <input type="text" class="form-control" name="buy_member" value="<?= htmlentities($row['buy_member']) ?>">
-                </label>
-            </div>
-
-
-            <div class="form-group">
-                <label>評分星星
-
-                    <select class="form-control" name="stars">
-
-                        <?php foreach ($stars as $k => $v) : ?>
-                            <option value="<?= $v['name'] ?>" <?= $row['stars'] == $v['name'] ? 'selected' : '' ?>><?= $v['name'] ?></option>
-                        <?php endforeach; ?>
-
-                    </select>
-
-                </label>
-            </div>
+                <div class="form-group">
+                    <label>會員姓名
+                        <input type="text" class="form-control" name="buy_member" value="<?= htmlentities($row['buy_member']) ?>">
+                    </label>
+                </div>
 
 
+                <div class="form-group">
+                    <label>評分星星
 
-            <div class="form-group">
-                <label>評論內容
-                    <textarea class="form-control" name="review" rows="10" style="resize:none"><?= htmlentities($row['review']) ?></textarea>
-                </label>
-            </div>
+                        <select class="form-control" name="stars">
 
+                            <?php foreach ($stars as $k => $v) : ?>
+                                <option value="<?= $v['name'] ?>" <?= $row['stars'] == $v['name'] ? 'selected' : '' ?>><?= $v['name'] ?></option>
+                            <?php endforeach; ?>
+
+                        </select>
+
+                    </label>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label>評論內容
+                        <textarea class="form-control" name="review" rows="12" style="resize:none"><?= htmlentities($row['review']) ?></textarea>
+                    </label>
+                </div>
+        </div>
+
+        <div class="col">
             <div class="form-group">
                 <div>上傳圖片</div>
 
@@ -96,16 +131,18 @@ $row = $pdo->query($sql)->fetch();
 
                 <input type="hidden" id="photo" name="user_photo" class="form-control" value="<?= htmlentities($row['user_photo']) ?>">
                 <div>
-                    <img src="../uploads/<?= $row['user_photo'] ?>" alt="" id="myimg" width="400px">
+                    <img src="../uploads/<?= $row['user_photo'] ?>" alt="" id="myimg" width="500px">
                 </div>
 
             </div>
             <div class="form-group">
-                <input type="submit" value="修改評論" class="btn btn-warning">
+                <input type="submit" value="送出評論" class="btn btn-warning">
             </div>
 
 
-        </form>
+            </form>
+        </div>
+
 
         <input type="file" id="file_input" name="myfile" style="display: none">
     </div>

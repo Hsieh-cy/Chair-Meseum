@@ -57,7 +57,7 @@ if ($totalRows > 0) {
     .card a {
         width: 90px;
         height: 40px;
-        
+
 
     }
 
@@ -111,11 +111,26 @@ if ($totalRows > 0) {
         background-size: cover !Important;
         background-position: center;
     }
+
+    .breadcrumb {
+        background-color: #EFF0F0;
+    }
+
+    .breadcrumb .breadcrumb-item.active {
+        color: #C77334;
+    }
 </style>
 
 <?php require __DIR__ . '/../parts/__navbar.php' ?>
 
 <div class="container">
+    <div class="row">
+        <ol class="breadcrumb ">
+            <li class="breadcrumb-item "><a class="text-black-50" href="#">後台管理</a></li>
+            <li class="breadcrumb-item "><a class="text-black-50" href="#">留言管理</a></li>
+            <li class="breadcrumb-item active" aria-current="page">產品回饋</li>
+        </ol>
+    </div>
     <div class="row">
         <h3>我的評價</h3>
 
@@ -182,11 +197,11 @@ if ($totalRows > 0) {
 
                         <?php else : ?>
                             <p class="card-text"> <?= $r['stars'] ?> </p>
-                             <p class="card-text"> <?= $r['review'] ?> </p>
+                            <p class="card-text"> <?= $r['review'] ?> </p>
                         <?php endif ?>
 
 
-                       
+
 
 
 
