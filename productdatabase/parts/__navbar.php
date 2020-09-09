@@ -103,7 +103,7 @@ if (!isset($page_name)) $page_name = '';
             </li>
 
 
-            <li class="nav-item dropdown <?= $page_name == 'order_list' ? 'active' : '' ?>">
+            <li class="nav-item dropdown <?= $page_name == 'order-list' ? 'active' : '' ?>">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     購物車
                 </a>
