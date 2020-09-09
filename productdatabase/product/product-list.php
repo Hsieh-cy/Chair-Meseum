@@ -42,6 +42,7 @@ if ($totalRows > 0) {
     body {
         background-color: #EFF0F0;
     }
+
     h3 {
         margin: auto;
         margin-top: 40px;
@@ -113,6 +114,15 @@ if ($totalRows > 0) {
         height: 150px;
         object-fit: cover
     }
+
+    .fas {
+        color: #5F6B6B;
+        cursor: pointer;
+    }
+
+    .fas:hover {
+        color: #C77334;
+    }
 </style>
 
 <?php require __DIR__ . '/../parts/__navbar.php' ?>
@@ -128,8 +138,10 @@ if ($totalRows > 0) {
     </div>
     <div class="row justify-content-between">
         <div class="col">
-            <a href="product-list.php" class="btn btn-warning choose">列表</a>
-            <a href="product-card.php " class="btn btn-warning choose">網格</a>
+
+
+            <a href="product-list.php" class="btn btn-light choose"><i class="fas fa-list"></i></a>
+            <a href="product-card.php " class="btn btn-light choose"><i class="fas fa-th"></i></a>
         </div>
 
         <div class="col ">
