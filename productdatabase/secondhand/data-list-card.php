@@ -67,12 +67,12 @@ $categories = $pdo->query($g_sql)->fetchAll();
 
     }
 
-    .fas {
+    .choose {
         color: #5F6B6B;
         cursor: pointer;
     }
 
-    .fas:hover {
+    .choose:hover {
         color: #C77334;
     }
 

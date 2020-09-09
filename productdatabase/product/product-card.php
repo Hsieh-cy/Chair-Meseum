@@ -109,12 +109,12 @@ if ($totalRows > 0) {
         background-position: center;
     }
 
-    .fas {
+    .choose {
         color: #5F6B6B;
         cursor: pointer;
     }
 
-    .fas:hover {
+    .choose:hover {
         color: #C77334;
     }
 
@@ -142,10 +142,10 @@ if ($totalRows > 0) {
 
     </div>
     <div class="row justify-content-between">
-        <div class="col choose">
+        <div class="col ">
 
-            <a href="product-list.php" class="btn btn-light "><i class="fas fa-list"></i></a>
-            <a href="product-card.php " class="btn btn-light"><i class="fas fa-th"></i></a>
+            <a href="product-list.php" class="btn btn-light choose"><i class="fas fa-list"></i></a>
+            <a href="product-card.php " class="btn btn-light choose"><i class="fas fa-th"></i></a>
         </div>
 
         <div class="col ">

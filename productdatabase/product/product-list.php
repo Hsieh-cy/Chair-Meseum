@@ -115,12 +115,12 @@ if ($totalRows > 0) {
         object-fit: cover
     }
 
-    .fas {
+    .choose {
         color: #5F6B6B;
         cursor: pointer;
     }
 
-    .fas:hover {
+    .choose:hover {
         color: #C77334;
     }
 
