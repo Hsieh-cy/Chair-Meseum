@@ -12,7 +12,7 @@
         <img src="./img/old.jpg" alt="">
     <?php else : ?>
         <img src="./img/young.jpeg" alt="">
-        @#$
+
     <?php endif; ?>
 </body>
 
