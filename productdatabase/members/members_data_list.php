@@ -35,8 +35,18 @@ if ($totalRows > 0) {
 
 ?>
 <?php include __DIR__ . '/../parts/__html_head.php'; ?>
+
+<style>
+    .title {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+</style>
 <?php include __DIR__ . '/../parts/__navbar.php'; ?>
 <div class="container">
+    <div class="title row justify-content-center">
+        <h3>會員列表</h3>
+    </div>
     <table class="table table-striped">
         <!-- `sid`, `name`, `email`, `mobile`, `birthday`, `address`, `created_at` -->
         <thead>
@@ -107,31 +117,33 @@ if ($totalRows > 0) {
         </tbody>
     </table>
 
-    <div class="row ">
-        <div class="col">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>"><a class="page-link" href="?page=<?= $page - 1 ?>"><i class="fas fa-hand-point-left"></i></a></li>
-                    <?//php for ($i = 1; $i <= $totalPages; $i++) : ?><?php for ($i = $page - 2; $i <= $page + 2; $i++) :
-                                                                            if ($i < 1) continue;
-                                                                            if ($i > $totalPages) break;
-                                                                        ?>
-                        <li class="page-item <?= $i == $page ? 'active' : '' ?>">
-                            <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-                        </li>
-                    <?php endfor; ?>
-                    <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>"><a class="page-link" href="?page=<?= $page + 1 ?>"><i class="fas fa-hand-point-right"></i></a></li>
-                </ul>
-            </nav>
+    <div class="row justify-content-center">
 
-        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>"><a class="page-link" href="?page=<?= $page - 1 ?>"><i class="fas fa-hand-point-left"></i></a></li>
+                <?//php for ($i = 1; $i <= $totalPages; $i++) : ?>
+
+                <?php for ($i = $page - 2; $i <= $page + 2; $i++) :
+                    if ($i < 1) continue;
+                    if ($i > $totalPages) break;
+                ?>
+                    <li class="page-item <?= $i == $page ? 'active' : '' ?>">
+                        <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                    </li>
+                <?php endfor; ?>
+                <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>"><a class="page-link" href="?page=<?= $page + 1 ?>"><i class="fas fa-hand-point-right"></i></a></li>
+            </ul>
+        </nav>
+
     </div>
+</div>
 
 
 
-    <?//php for($i=1;$i<=$totalPages;$i++): ?>
+<?//php for($i=1;$i<=$totalPages;$i++): ?>
 
-    <!-- <script>
+<!-- <script>
         const trashes = document.querySelectorAll('.my-trash-i');
 
         const trashHandler = (event) => {
