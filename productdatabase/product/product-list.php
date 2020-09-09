@@ -123,6 +123,14 @@ if ($totalRows > 0) {
     .fas:hover {
         color: #C77334;
     }
+
+    .breadcrumb {
+        background-color: #EFF0F0;
+    }
+
+    .breadcrumb .breadcrumb-item.active {
+        color: #C77334;
+    }
 </style>
 
 <?php require __DIR__ . '/../parts/__navbar.php' ?>
@@ -130,6 +138,13 @@ if ($totalRows > 0) {
 <!-- `sid`, `產品編號`, `產品名稱`, `產品描述`, `顏色`, `產品類別`, `材質`, `產品圖`, `產品價格`, `Hashtag`, `上架日期` -->
 
 <div class="container">
+    <div class="row">
+        <ol class="breadcrumb ">
+            <li class="breadcrumb-item "><a class="text-black-50" href="#">後台管理</a></li>
+            <li class="breadcrumb-item "><a class="text-black-50" href="#">產品管理</a></li>
+            <li class="breadcrumb-item active" aria-current="page">產品列表</li>
+        </ol>
+    </div>
     <div class="row">
         <h3>產品列表</h3>
 

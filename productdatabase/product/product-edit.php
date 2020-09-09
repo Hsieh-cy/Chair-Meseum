@@ -85,12 +85,27 @@ $chair_colors = $pdo->query('SELECT * FROM `w_chair_color`')->fetchAll();
     #infobar {
         margin: auto
     }
+
+    .breadcrumb {
+        background-color: #EFF0F0;
+    }
+
+    .breadcrumb .breadcrumb-item.active {
+        color: #C77334;
+    }
 </style>
 
 <?php require __DIR__ . '/../parts/__navbar.php' ?>
 
 
 <div class="container">
+    <div class="row">
+        <ol class="breadcrumb ">
+            <li class="breadcrumb-item "><a class="text-black-50" href="#">後台管理</a></li>
+            <li class="breadcrumb-item "><a class="text-black-50" href="#">產品管理</a></li>
+            <li class="breadcrumb-item active" aria-current="page">編輯產品</li>
+        </ol>
+    </div>
 
 
     <div class="row">

@@ -118,12 +118,25 @@ if ($totalRows > 0) {
         color: #C77334;
     }
 
-   
+    .breadcrumb {
+        background-color: #EFF0F0;
+    }
+
+    .breadcrumb .breadcrumb-item.active {
+        color: #C77334;
+    }
 </style>
 
 <?php require __DIR__ . '/../parts/__navbar.php' ?>
 
 <div class="container">
+    <div class="row">
+        <ol class="breadcrumb ">
+            <li class="breadcrumb-item "><a class="text-black-50" href="#">後台管理</a></li>
+            <li class="breadcrumb-item "><a class="text-black-50" href="#">產品管理</a></li>
+            <li class="breadcrumb-item active" aria-current="page">產品列表</li>
+        </ol>
+    </div>
     <div class="row">
         <h3>產品列表</h3>
 
