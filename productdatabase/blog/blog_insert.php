@@ -51,16 +51,10 @@ require __DIR__ . '/../parts/__connect_db.php';
                         <div class="form-group">
                             <label for="theme"><span class="red-stars"></span>theme</label>
                             <select class="form-control" id="theme" name="theme" required>
-<<<<<<< Updated upstream
-                                <option value="1" <?//= $type['theme']==1 ? 'selected="selected"' : '' ; ?>歷史主題</option>
-                                <option value="2" <?//= $type['theme']==2 ? 'selected="selected"' : '' ; ?>趨勢主題</option>
-                                <option value="3" <?//= $type['theme']==3 ? 'selected="selected"' : '' ; ?>合作主題</option>
-=======
-                                <option value="1" >椅子始源</option>
-                                <option value="2" >流行趨勢</option>
-                                <option value="3" >廠商合作</option>
+                                <option value="1">椅子始源</option>
+                                <option value="2">流行趨勢</option>
+                                <option value="3">廠商合作</option>
                                 <!-- <h5 class="card-title">主題:<?= $type[$r['theme']] ?></h5> -->
->>>>>>> Stashed changes
                             </select>
                             <small class="form-text error-msg"></small>
                         </div>
