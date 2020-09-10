@@ -76,6 +76,10 @@ $categories = $pdo->query($g_sql)->fetchAll();
         color: #C77334;
     }
 
+    .fas {
+        color: #5F6B6B;
+    }
+
     h3 {
         margin: auto;
 
