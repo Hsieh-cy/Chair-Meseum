@@ -203,9 +203,10 @@ if ($totalRows > 0) {
                         <p class="card-text">預約上架時間： <?= $r['on_shelf_time'] ?> </p>
                         <p class="card-text">預約下架時間： <?= $r['off_shelf_time'] ?> </p>
                         <p class="card-text">最後修改時間： <?= $r['last_edit_time'] ?> </p>
-
-                        <a href="javascript:delete_it(<?= $r['sid'] ?>)" class="btn btn-warning">刪除</a>
-                        <a href="product-edit.php?sid=<?= $r['sid'] ?>" class="btn btn-warning">修改</a>
+                        <?php if (isset($_SESSION['admin'])) : ?>
+                            <a href="javascript:delete_it(<?= $r['sid'] ?>)" class="btn btn-warning">刪除</a>
+                            <a href="product-edit.php?sid=<?= $r['sid'] ?>" class="btn btn-warning">修改</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
