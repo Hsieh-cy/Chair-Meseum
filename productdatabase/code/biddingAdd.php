@@ -38,11 +38,7 @@ require __DIR__ . '/../parts/__admin-required.php';
                             <br>
                             <input type="file" id="file_input" style="display: none">
                         </div>
-                        <div class="form-group">
-                            <label for="product_sid"><span class="red-stars">**</span> Product No.</label>
-                            <input type="text"" class=" form-control" id="product_sid" name="product_sid" required>
-                            <small class="form-text error-msg"></small>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="productName"><span class="red-stars">**</span> Product Name</label>
                             <input type="text" class="form-control" id="productName" name="productName" required>
@@ -50,12 +46,12 @@ require __DIR__ . '/../parts/__admin-required.php';
                         </div>
 
                         <div class="form-group">
-                            <label for="startingDate"><span class="red-stars">**</span> Starting date</label>
+                            <label for="startingDate"> Starting date</label>
                             <input type="date" class="form-control" id="startingDate" name="startingDate">
                             <small class="form-text error-msg"></small>
                         </div>
                         <div class="form-group">
-                            <label for="startingTime"><span class="red-stars">**</span> Starting time</label>
+                            <label for="startingTime"> Starting time</label>
                             <input type="time" class="form-control" id="startingTime" name="startingTime">
 
                         </div>
@@ -147,7 +143,16 @@ require __DIR__ . '/../parts/__admin-required.php';
             $startedPrice.style.borderColor = 'red';
             $startedPrice.nextElementSibling.innerHTML = 'Please input your price correctly';
         };
-
+        if (!bidPrice_p.test($bidPrice.value)) {
+            isPass = false;
+            $bidPrice.style.borderColor = 'red';
+            $bidPrice.nextElementSibling.innerHTML = 'Please input your price correctly';
+        };
+        if (!soldPrice_p.test($soldPrice.value)) {
+            isPass = false;
+            $soldPrice.style.borderColor = 'red';
+            $soldPrice.nextElementSibling.innerHTML = 'Please input your price correctly';
+        };
         if (isPass) {
             const fd = new FormData(document.form1);
 
