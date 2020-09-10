@@ -79,44 +79,44 @@
             <div class="row x-auto">
                 <div class="col-3">
                     <div class="circle text-center">
-                        <h2 class="any"><a href="/members/members_data_list.php">會員</a></h2>
+                        <h2 class="any"><a href="members/members_data_list.php">會員</a></h2>
                     </div>
                 </div>
                 <div class="col-3 ">
                     <div class="circle text-center">
-                        <h2 class="any"><a href="/product/product-list.php">商品</a></h2>
+                        <h2 class="any"><a href="product/product-list.php">商品</a></h2>
                     </div>
                 </div>
                 <div class="col-3 ">
                     <div class="circle text-center">
-                        <h2 class="any"><a href="/eva/datalist2_delete.php">募資</a></h2>
+                        <h2 class="any"><a href="eva/datalist2_delete.php">募資</a></h2>
                     </div>
                 </div>
                 <div class="col-3 ">
                     <div class="circle text-center">
-                        <h2 class="any"><a href="/code/biddingList.php">競標</a></h2>
+                        <h2 class="any"><a href="code/biddingList.php">競標</a></h2>
                     </div>
                 </div>
             </div>
             <div class="row ">
                 <div class="col-3 ">
                     <div class="circle1 text-center">
-                        <h2 class="any"><a href="/test/data_list.php">體驗</a></h2>
+                        <h2 class="any"><a href="test/data_list.php">體驗</a></h2>
                     </div>
                 </div>
                 <div class="col-3 ">
                     <div class="circle1 text-center">
-                        <h2 class="any"><a href="/secondhand/data-list.php">二手</a></h2>
+                        <h2 class="any"><a href="secondhand/data-list.php">二手</a></h2>
                     </div>
                 </div>
                 <div class="col-3 ">
                     <div class="circle1 text-center">
-                        <h2 class="any"><a href="/j_order-master/data_list.php">訂單</a></h2>
+                        <h2 class="any"><a href="j_order-master/data_list.php">訂單</a></h2>
                     </div>
                 </div>
                 <div class="col-3 ">
                     <div class="circle1 text-center">
-                        <h2 class="any"><a href="#">合作</a></h2>
+                        <h2 class="any"><a href="blog/blog_data_list.php">合作</a></h2>
                     </div>
                 </div>
             </div>
