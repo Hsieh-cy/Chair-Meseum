@@ -45,6 +45,9 @@ $cate_order_status = $pdo->query($os_sql)->fetchAll();
 $ds_sql = "SELECT * FROM `J_cart_delivery_status` ORDER BY sid ASC";
 $cate_delivery_status = $pdo->query($ds_sql)->fetchAll();
 
+$mi_sql = "SELECT * FROM `J_cart_delivery_status` ORDER BY sid ASC";
+$cate_member_id = $pdo->query($mi_sql)->fetchAll();
+
 ?>
 
 <?php include __DIR__ . '/../parts/__html_head.php'; ?>
@@ -108,6 +111,14 @@ $cate_delivery_status = $pdo->query($ds_sql)->fetchAll();
                     default:
                         $delivery_status = "未判斷";
                 }
+                $i = 1;
+                while(true){
+                    if($r['member'] == $i){
+                        $member = $cate_member_id[$i-1][]
+                            break;
+                    }
+                    $i++;
+                };
 
 
                 // if ($r['delivery_status'] == 3) {
