@@ -7,6 +7,11 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
+        body {
+            background-image: url('images/3.jpg');
+            background-size: cover;
+        }
+
         .circle {
             margin: 470px auto 10px auto;
             width: 100px;
