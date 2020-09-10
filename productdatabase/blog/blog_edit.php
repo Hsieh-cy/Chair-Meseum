@@ -60,9 +60,9 @@ if (empty($row)) {
                         <div class="form-group">
                             <label for="theme"><span class="red-stars"></span>theme</label>
                             <select class="form-control" id="theme" name="theme" required>
-                                <option value="1" <?= $row['theme'] == 1 ? 'selected="selected"' : ''; ?>>歷史主題</option>
-                                <option value="2" <?= $row['theme'] == 2 ? 'selected="selected"' : ''; ?>>趨勢主題</option>
-                                <option value="3" <?= $row['theme'] == 3 ? 'selected="selected"' : ''; ?>>合作主題</option>
+                                <option value="1" <?= $row['theme'] == 1 ? 'selected="selected"' : ''; ?>>椅子始源</option>
+                                <option value="2" <?= $row['theme'] == 2 ? 'selected="selected"' : ''; ?>>流行趨勢</option>
+                                <option value="3" <?= $row['theme'] == 3 ? 'selected="selected"' : ''; ?>>廠商合作</option>
                             </select>
                             <small class="form-text error-msg"></small>
                         </div>
