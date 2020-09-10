@@ -155,7 +155,7 @@ $categories = $pdo->query($g_sql)->fetchAll();
                     <label for="framework_sid">骨架</label><br>
                     <?php foreach ($framework as $key => $b) : ?>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="framework_sid" value="<?= htmlentities($rows['framework_sid']) ?>" id="framework_sid<?= $b['sid'] ?>" value="<?= $b['sid'] ?>" <?= ($rows['framework_sid'] == $key + 1) ? 'checked' : '' ?>>
+                            <input class="form-check-input" type="radio" name="framework_sid" id="framework_sid<?= $b['sid'] ?>" value="<?= $b['sid'] ?>" <?= ($rows['framework_sid'] == $key + 1) ? 'checked' : '' ?>>
                             <label class="form-check-label" for="framework_sid<?= $b['sid'] ?>"><?= $b['name'] ?></label>
                         </div>
                     <?php endforeach; ?>
@@ -164,7 +164,7 @@ $categories = $pdo->query($g_sql)->fetchAll();
                     <label for="material_sid">材質</label><br>
                     <?php foreach ($material as $key => $m) : ?>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="material_sid" value="<?= htmlentities($rows['material_sid']) ?>" id="material_sid<?= $m['sid'] ?>" value="<?= $m['sid'] ?>" <?= ($rows['framework_sid'] == $key + 1) ? 'checked' : '' ?>>
+                            <input class="form-check-input" type="radio" name="material_sid" id="material_sid<?= $m['sid'] ?>" value="<?= $m['sid'] ?>" <?= ($rows['framework_sid'] == $key + 1) ? 'checked' : '' ?>>
                             <label class="form-check-label" for="material_sid<?= $m['sid'] ?>"><?= $m['name'] ?></label>
                         </div>
                     <?php endforeach; ?>
