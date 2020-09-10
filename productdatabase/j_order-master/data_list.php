@@ -45,11 +45,7 @@ $cate_order_status = $pdo->query($os_sql)->fetchAll();
 $ds_sql = "SELECT * FROM `J_cart_delivery_status` ORDER BY sid ASC";
 $cate_delivery_status = $pdo->query($ds_sql)->fetchAll();
 
-<<<<<<< HEAD
 $mi_sql = "SELECT * FROM `members` ORDER BY sid ASC";
-=======
-$mi_sql = "SELECT * FROM `J_cart_delivery_status` ORDER BY sid ASC";
->>>>>>> 2312a35197e93c2e59a1d70b60c2fc8d57d6d76d
 $cate_member_id = $pdo->query($mi_sql)->fetchAll();
 
 ?>
