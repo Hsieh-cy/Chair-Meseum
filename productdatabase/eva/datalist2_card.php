@@ -118,22 +118,22 @@ if ($totalRows > 0) {
         /* width: 300px; */
         margin-top: 30px;
         margin-bottom: 30px;
-        border: none;
+        border: 5px 5px 5px grey;
 
 
     }
 
     .wrap {
-        /* background-position: center; */
+        background-position: center;
         background-repeat: no-repeat;
     }
 
     .wrap img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        background-size: cover !Important;
-        background-position: center;
+        height: 250px;
+        object-fit: fill;
+        background-size: fill !Important;
+        background-position: fill;
     }
 </style>
 <?php include __DIR__ . '/../parts/__navbar.php'; ?>

@@ -130,7 +130,7 @@ $chair_colors = $pdo->query('SELECT * FROM `w_chair_color`')->fetchAll();
 
                 <div class="form-group">
                     <label>產品描述
-                        <textarea class="form-control" name="description" rows="10" style="resize:none">From ancient mathematicians like Euclid, to Leonardo da Vinci, to Denmark’s own Hans J.</textarea>
+                        <textarea class="form-control" name="description" rows="10" style="resize:none"></textarea>
                     </label>
                 </div>
 

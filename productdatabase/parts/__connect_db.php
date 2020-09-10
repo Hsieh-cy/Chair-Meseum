@@ -1,5 +1,5 @@
 <?php
-
+// 192.168.27.128
 $db_host = "localhost";
 $db_name = "chairproject";
 $db_user = "root";

@@ -6,9 +6,9 @@ require __DIR__ . '/../parts/__connect_db.php';
 // 判斷是否登入,如未登入將轉導
 // require __DIR__. '/0831_admin_required.php';
 // $type = array(
-//     1 => '歷史',
-//     2 => '趨勢',
-//     3 => '合作',
+//     1 => '椅子始源',
+//     2 => '流行趨勢',
+//     3 => '廠商合作',
 // )
 ?>
 <?php include __DIR__ . '/../parts/__html_head.php'; ?>
@@ -51,9 +51,10 @@ require __DIR__ . '/../parts/__connect_db.php';
                         <div class="form-group">
                             <label for="theme"><span class="red-stars"></span>theme</label>
                             <select class="form-control" id="theme" name="theme" required>
-                                <option value="1" <?//= $type['theme']==1 ? 'selected="selected"' : '' ; ?>歷史主題</option>
-                                <option value="2" <?//= $type['theme']==2 ? 'selected="selected"' : '' ; ?>趨勢主題</option>
-                                <option value="3" <?//= $type['theme']==3 ? 'selected="selected"' : '' ; ?>合作主題</option>
+                                <option value="1">椅子始源</option>
+                                <option value="2">流行趨勢</option>
+                                <option value="3">廠商合作</option>
+                                <!-- <h5 class="card-title">主題:<?= $type[$r['theme']] ?></h5> -->
                             </select>
                             <small class="form-text error-msg"></small>
                         </div>
