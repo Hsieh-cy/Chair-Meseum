@@ -185,7 +185,7 @@ if ($totalRows > 0) {
             <td><?= strip_tags($r['e_proname']) ?></td>
             <td><?= $r['e_cate'] ?></td>
             <td>
-              <img src="../uploads/<?= $r['e_pic'] ?>" alt="" width="100px"></td>
+              <img src="../uploads/<?= $r['e_pic'] ?>" alt="" width="200px"></td>
             <td><?= strip_tags($r['e_prointro']) ?></td>
             <td><?= strip_tags($r['e_lowprice']) ?></td>
             <td><?= strip_tags($r['e_goal']) ?></td>
