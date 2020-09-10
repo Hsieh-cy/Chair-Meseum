@@ -45,6 +45,9 @@ $cate_order_status = $pdo->query($os_sql)->fetchAll();
 $ds_sql = "SELECT * FROM `J_cart_delivery_status` ORDER BY sid ASC";
 $cate_delivery_status = $pdo->query($ds_sql)->fetchAll();
 
+$mi_sql = "SELECT * FROM `members` ORDER BY sid ASC";
+$cate_member_id = $pdo->query($mi_sql)->fetchAll();
+
 ?>
 
 <?php include __DIR__ . '/../parts/__html_head.php'; ?>
@@ -108,6 +111,14 @@ $cate_delivery_status = $pdo->query($ds_sql)->fetchAll();
                     default:
                         $delivery_status = "未判斷";
                 }
+                $i = 1;
+                while (true) {
+                    if ($r['member'] == $i) {
+                        $member = $cate_member_id[$i - 1]['name'];
+                        break;
+                    }
+                    $i++;
+                };
 
 
                 // if ($r['delivery_status'] == 3) {
@@ -122,7 +133,7 @@ $cate_delivery_status = $pdo->query($ds_sql)->fetchAll();
                 <tr>
                     <td><?= $r['sid'] ?></td>
                     <td><a href="./data_list_detail.php?PO_NO=<?= $r['PO_NO'] ?>"><?= $r['PO_NO'] ?></a></td>
-                    <td><?= $r['member'] ?></td>
+                    <td><?= $member ?></td>
                     <td><?= ($r['qualify'] == 1) ? $cate_qualify[0]['qualify'] : $cate_qualify[1]['qualify'] ?></td>
                     <td><?= $r['order_date'] ?></td>
                     <td><?= $order_status ?></td>
