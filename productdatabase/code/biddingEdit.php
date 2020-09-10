@@ -50,12 +50,7 @@ if (empty($row)) {
                             <img src="../uploads/<?= $row['pics'] ?>" alt="" id="myimg" width="250px">
                             <br>
                             <input type="file" id="file_input" style="display: none">
-                        </div>
-                        <div class="form-group">
-                            <label for="product_sid"><span class="red-stars">**</span> Product No.</label>
-                            <input type="text" class="form-control" id="product_sid" name="product_sid" value="<?= htmlentities($row['product_sid']) ?>">
-                            <small class="form-text error-msg"></small>
-                        </div>
+                        </div>                        
                         <div class="form-group">
                             <label for="productName"><span class="red-stars">**</span> Product Name</label>
                             <input type="text" class="form-control" id="productName" name="productName" value="<?= htmlentities($row['productName']) ?>">
@@ -157,7 +152,16 @@ if (empty($row)) {
             $startedPrice.style.borderColor = 'red';
             $startedPrice.nextElementSibling.innerHTML = 'Please input your price correctly';
         };
-
+        if (!bidPrice_p.test($bidPrice.value)) {
+            isPass = false;
+            $bidPrice.style.borderColor = 'red';
+            $bidPrice.nextElementSibling.innerHTML = 'Please input your price correctly';
+        };
+        if (!soldPrice_p.test($soldPrice.value)) {
+            isPass = false;
+            $soldPrice.style.borderColor = 'red';
+            $soldPrice.nextElementSibling.innerHTML = 'Please input your price correctly';
+        };
         if (isPass) {
             const fd = new FormData(document.form1);
 
@@ -170,21 +174,18 @@ if (empty($row)) {
                     console.log(obj);
                     if (obj.success) {
                         infobar.innerHTML = '修改成功';
-                        // infobar.className = "alert alert-success";
-                        if (infobar.classList.contains('alert-danger')) {
-                            infobar.classList.replace('alert-danger', 'alert-success')
-                            setTimeout(() => {
-                                location.href = '<?= $_SERVER['HTTP_REFERER'] ?? "biddingList.php" ?>';
-                            }, 3000);
-                        };
+                        infobar.className = "alert alert-success";
+                        setTimeout(() => {
+                            location.href = '<?= $_SERVER['HTTP_REFERER'] ?? "biddingList.php" ?>';
+                        }, 3000);
+
                     } else {
                         infobar.innerHTML = obj.error || '資料未修改';
-                        // infobar.className = "alert alert-danger";
-                        if (infobar.classList.contains('alert-success')) {
-                            infobar.classList.replace('alert-success', 'alert-danger')
-                            submitBtn.style.display = 'block';
-                        }
+                        infobar.className = "alert alert-danger";
+
+                        submitBtn.style.display = 'block';
                     }
+
                     infobar.style.display = 'block';
                 });
 

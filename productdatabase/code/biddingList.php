@@ -90,7 +90,7 @@ if ($totalRows > 0) {
                         <td><a href="biddingDelete.php?sid=<?= $r['sid'] ?>" onclick="ifDel(event)" data-sid="<?= $r['sid'] ?>">
                                 <i class="fas fa-trash-alt"></i></a></td>
                     <?php endif; ?>
-                    <td><?= $r['product_sid'] ?></td>
+                    <td><?= $r['sid'] ?></td>
                     <td><?= $r['productName'] ?></td>
                     <td><img src="../uploads/<?= $r['pics'] ?>" alt=""></td>
                     <td><?= $r['startingDate'] ?></td>
@@ -112,7 +112,12 @@ if ($totalRows > 0) {
             <div class="col d-flex justify-content-center">
                 <nav aria-label="Page navigation example ">
                     <ul class="pagination">
-                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>"> 
+                        <a class="page-link" href="?page=<?= $page == 1 ?>">
+                            第一頁
+                        </a>
+                    </li>
+                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
                             <a class="page-link" href="?page=<?= $page - 1 ?>">
                                 <i class="fas fa-angle-double-left"></i>
                             </a>
@@ -130,6 +135,11 @@ if ($totalRows > 0) {
                                 <i class="fas fa-angle-double-right"></i>
                             </a>
                         </li>
+                        <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
+                        <a class="page-link" href="?page=<?= $totalPages ?>">
+                            最後一頁
+                        </a>
+                    </li>
                     </ul>
                 </nav>
             </div>
@@ -147,11 +157,11 @@ if ($totalRows > 0) {
         }
     }
 
-    function delete_it(sid) {
-        if (confirm(`是否要刪除編號為 ${sid} 的資料???`)) {
-            location.href = 'biddingDelete.php?sid=' + sid;
-        }
-    }
+    // function delete_it(sid) {
+    //     if (confirm(`是否要刪除編號為 ${sid} 的資料???`)) {
+    //         location.href = 'biddingDelete.php?sid=' + sid;
+    //     }
+    // }
 
     // const checkbox = document.querySelector('#checkbox')
 

@@ -19,7 +19,6 @@ if (empty($_POST['sid'])) {
 }
 
 $sql = "UPDATE `bidding` SET 
-    `product_sid`=?,
     `productName`=?,
     `pics`=?,
     `startingDate`=?,
@@ -33,7 +32,6 @@ $sql = "UPDATE `bidding` SET
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
-    $_POST['product_sid'],
     $_POST['productName'],
     $_POST['pics'],
     $_POST['startingDate'],

@@ -41,6 +41,7 @@ if ($totalRows > 0) {
 
     body {
         background-color: #EFF0F0;
+       
     }
 
     h3 {
