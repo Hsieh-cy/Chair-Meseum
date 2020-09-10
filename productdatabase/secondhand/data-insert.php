@@ -219,6 +219,8 @@ $categories = $pdo->query($g_sql)->fetchAll();
                 isPass = false;
                 $product_no.style.borderColor = 'red';
                 $product_no.nextElementSibling.innerHTML = '請填寫正確商品編號';
+
+                // submitBtn.style.display = 'inline-block';
             }
 
             // if (!mobile_pattern.test($mobile.value)) {
